@@ -13,7 +13,7 @@
     <vue-element-loading :active="loading" spinner="bar-fade-scale" color="#B29881" :is-full-screen="true" background-color="transparent"/>
     <div class="swiper-container" id="promosContent">
       <div class="swiper-wrapper">
-        <div v-for="(tb,index) in list" class="promosContent swiper-slide">
+        <div v-for="(tb,index) in list" class="promosContent swiper-slide" :key="index">
           <div class="first">
             <div class="gift">
               <div class="tableBox" v-html="tb.content">

@@ -57,7 +57,7 @@ export default {
   .app {
     height: 100%;
     background: url(../src/assets/img/mBG.jpg) no-repeat;
-    background-size: contain;
+    background-size: cover;
     text-align: center;
   }
   .app header{
