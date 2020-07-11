@@ -3,7 +3,7 @@
     <div class="index router-view">
       <vue-element-loading :active="loading" spinner="bar-fade-scale" color="#B29881" :is-full-screen="true" background-color="transparent"/>
       <div class="buttons" v-if="loaded" >
-        <a @click="toHref(btn1.url)" target="_blank" class="tap-effect bgColor-effect" style="width: 100%">
+        <a @click="toHref(btn1.url)" target="_blank" class="tap-effect bgColor-effect" >
           <img src="../assets/img/reg.svg">
           <span></span>
           <div>
@@ -19,14 +19,14 @@
 <!--            <p>{{btn2.desc}}</p>-->
 <!--          </div>-->
 <!--        </a>-->
-        <!--<a class="tap-effect bgColor-effect" @click="toUrl(btn3.url)">-->
-          <!--<img src="../assets/img/zuanshi.svg">-->
-          <!--<span></span>-->
-          <!--<div>-->
-            <!--<p>{{btn3.title}}</p>-->
-            <!--<p>{{btn3.desc}}</p>-->
-          <!--</div>-->
-        <!--</a>-->
+        <a class="tap-effect bgColor-effect" @click="toUrl(btn3.url)">
+          <img src="../assets/img/zuanshi.svg">
+          <span></span>
+          <div>
+            <p>{{btn3.title}}</p>
+            <p>{{btn3.desc}}</p>
+          </div>
+        </a>
         <!--<a class="tap-effect bgColor-effect" @click="toHref('https://m.balltvs.com')">-->
           <!--<img src="../assets/img/tuijian.svg">-->
           <!--<span></span>-->

@@ -370,4 +370,7 @@ input {
   .recommend{
     min-height: 4.5rem!important;
   }
+  .tableBox{
+    margin-top: 0.05rem;
+  }
 }

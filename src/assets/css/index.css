@@ -4,7 +4,7 @@
     /*height:calc(100% - 2.4rem);*/
   /*}*/
   .index .buttons{
-    height:1.5rem;
+    height:1.4rem;
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
@@ -14,7 +14,6 @@
     -ms-flex-line-pack:distribute;
     align-content:space-around;
     padding:0 6.5%;
-    margin-top: 0.15rem;
     -ms-flex-wrap:wrap;
     flex-wrap:wrap
   }
@@ -58,6 +57,10 @@
   }
   .index .buttons a div{width:0.8rem;color:#fff;line-height: 1;
   }
+  .index .buttons>a:nth-child(1) div p:nth-child(1) {
+    text-align: left;
+    font-size: 0.2rem;
+  }
   .index .buttons a div p:nth-child(1){text-align:left;font-size:0.13rem
   }
   .index .buttons a div p:nth-child(2){font-size:0.15rem;white-space:nowrap;-webkit-transform:scale(0.6) translateX(-0.27rem);-ms-transform:scale(0.6) translateX(-0.27rem);transform:scale(0.6) translateX(-0.27rem)
@@ -84,7 +87,7 @@
   }
   .index .fav span:hover{background:#c5b2a1
   }
-  .index .kefu{display:block;position:fixed;-webkit-writing-mode:vertical-rl;-ms-writing-mode:tb-rl;writing-mode:vertical-rl;right:0;top:3.1rem;font-size:0.14rem;padding:0.15rem 0.1rem;background:#434554;-webkit-transform:translateX(-0.2rem);-ms-transform:translateX(-0.2rem);transform:translateX(-0.2rem);color:#B1987F;border-radius:0.05rem;
+  .index .kefu{display:block;position:fixed;-webkit-writing-mode:vertical-rl;-ms-writing-mode:tb-rl;writing-mode:vertical-rl;right:0;top:0.2rem;font-size:0.14rem;padding:0.15rem 0.1rem;background:#434554;-webkit-transform:translateX(-0.2rem);-ms-transform:translateX(-0.2rem);transform:translateX(-0.2rem);color:#B1987F;border-radius:0.05rem;
     z-index: 100;
   }
   .index .kefu:hover{background:#5a5c70;color:#c4b29f
@@ -95,7 +98,7 @@
   }
 }
 @media only screen and (min-width: 1199px){
-  .index .buttons{width:100%;height:1.8rem;-ms-flex-line-pack:justify;align-content:space-between;margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between
+  .index .buttons{width:100%;height:1.6rem;-ms-flex-line-pack:justify;align-content:space-between;margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between
   }
   .index .buttons>a{display:-webkit-box;display:-ms-flexbox;display:flex;width:2rem;height:0.70rem;background:#3F455F;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:0.04rem
   }
@@ -107,13 +110,20 @@
   }
   .index .buttons>a div{width:1.2rem;color:#fff
   }
-  .index .buttons>a div p:nth-child(1){text-align:left;font-size:0.2rem
+
+  .index .buttons>a div p:nth-child(1){text-align:left;font-size:0.2rem;
+
   }
-  .index .buttons>a div p:nth-child(2){font-size:0.15rem;white-space:nowrap;-webkit-transform:scale(0.6) translateX(-0.27rem);-ms-transform:scale(0.6) translateX(-0.27rem);transform:scale(0.6) translateX(-0.27rem)
+  .index .buttons>a div p:nth-child(2){font-size: 0.1rem;
+    white-space: nowrap;
+    -webkit-transform: scale(0.9) translate(-0.05rem, 0.03rem);
+    transform: scale(0.9) translate(-0.05rem, 0.03rem);
+    text-align: left;
   }
+
   .index .buttons>a:nth-child(1){
     /*width:2.45rem;*/
-    height:0.9rem;
+    /*height:0.9rem;*/
     background:-webkit-gradient(linear, left top, left bottom, from(#D0A187), to(#AD7964));
     background:-webkit-linear-gradient(#D0A187, #AD7964);
     background:-o-linear-gradient(#D0A187, #AD7964);
@@ -137,12 +147,11 @@
     width:1.2rem;
     color:#fff;
   }
-  .index .buttons>a:nth-child(1) div p:nth-child(1){
-    text-align:left;
-    font-size:0.2rem
-  }
+
+
   .index .buttons>a:nth-child(1) div p:nth-child(2){
     font-size:0.1rem;
+    text-align: left;
     white-space:nowrap;-webkit-transform:scale(0.9) translate(-0.05rem, 0.03rem);
     -ms-transform:scale(0.9) translate(-0.05rem, 0.03rem);
     transform:scale(0.9) translate(-0.05rem, 0.03rem)
