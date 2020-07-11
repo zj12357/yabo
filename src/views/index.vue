@@ -19,22 +19,22 @@
 <!--            <p>{{btn2.desc}}</p>-->
 <!--          </div>-->
 <!--        </a>-->
-        <a class="tap-effect bgColor-effect" @click="toUrl(btn3.url)">
-          <img src="../assets/img/zuanshi.svg">
-          <span></span>
-          <div>
-            <p>{{btn3.title}}</p>
-            <p>{{btn3.desc}}</p>
-          </div>
-        </a>
-        <a class="tap-effect bgColor-effect" @click="toHref('https://m.balltvs.com')">
-          <img src="../assets/img/tuijian.svg">
-          <span></span>
-          <div>
-            <p>红单推荐</p>
-            <p>料先生大数据精准预测</p>
-          </div>
-        </a>
+        <!--<a class="tap-effect bgColor-effect" @click="toUrl(btn3.url)">-->
+          <!--<img src="../assets/img/zuanshi.svg">-->
+          <!--<span></span>-->
+          <!--<div>-->
+            <!--<p>{{btn3.title}}</p>-->
+            <!--<p>{{btn3.desc}}</p>-->
+          <!--</div>-->
+        <!--</a>-->
+        <!--<a class="tap-effect bgColor-effect" @click="toHref('https://m.balltvs.com')">-->
+          <!--<img src="../assets/img/tuijian.svg">-->
+          <!--<span></span>-->
+          <!--<div>-->
+            <!--<p>红单推荐</p>-->
+            <!--<p>料先生大数据精准预测</p>-->
+          <!--</div>-->
+        <!--</a>-->
         <a class="tap-effect bgColor-effect" @click="toHref(sportBtn.url)" >
           <img src="../assets/img/ball.svg">
           <span></span>
@@ -109,6 +109,75 @@
 <!--        </a>-->
 <!--      </div>-->
 <!--      <div class="tip">集团直营，信誉保障！超多奖励等你来拿，赶快加入我们吧！</div>-->
+
+      <div class="tableBox">
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tbody>
+          <tr>
+            <th><h3><span style="font-size: large;">激情夏日   亚博豪礼送不停</span></h3></th>
+          </tr>
+          </tbody>
+        </table>
+        <table border="0" width="100%" cellpadding="0" cellspacing="0">
+          <tbody>
+          <tr>
+            <th>特邀首存</th>
+            <th>赠送彩金一次到账</th>
+            <th>流水要求</th>
+            <th>获取要求</th>
+            <th>游戏要求</th>
+          </tr>
+          <tr>
+            <td>100</td>
+            <td>58</td>
+            <td  rowspan="11">一倍流水</td>
+            <td  rowspan="11">充值成功立即到账</td>
+            <td  rowspan="11">无限制</td>
+          </tr>
+          <tr>
+            <td>200</td>
+            <td>88</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>108</td>
+          </tr>
+          <tr>
+            <td>1000</td>
+            <td>258 + zippo打火机</td>
+          </tr>
+          <tr>
+            <td>3000</td>
+            <td>488 + zippo打火机</td>
+
+          </tr>
+          <tr>
+            <td>5000</td>
+            <td>588 + 飞利浦电动牙刷</td>
+          </tr>
+          <tr>
+            <td>10000</td>
+            <td>888 + 飞利浦电动牙刷</td>
+          </tr>
+          <tr>
+            <td>20000</td>
+            <td>1288 + 哈曼卡顿二代音响</td>
+          </tr>
+          <tr>
+            <td>50000</td>
+            <td>1888 + apple  watch 5</td>
+          </tr>
+          <tr>
+            <td>100000</td>
+            <td>2888 + 新款ipad  air  256G</td>
+          </tr>
+          <tr>
+            <td>200000</td>
+            <td>3888 + iphone11pro  256G</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="tip">应有尽有，无所不有！</div>
       <div class="fav" >
         <span class="tap-effect bgColor-effect" @click="GoWhite">号码免打扰申请</span>
