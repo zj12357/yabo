@@ -109,7 +109,8 @@ export default {
     height:0.6rem;
     position:relative;
     bottom:0;
-    background:#151419
+    background:#151419;
+    margin-top: 0.2rem;
   }
   .app footer div{
     height:100%
@@ -199,7 +200,8 @@ export default {
     height:0.6rem;
     position:relative;
     bottom:0;
-    background:#151419
+    background:#151419;
+    margin-top: 0.2rem;
   }
   .app footer div{
     height:100%
