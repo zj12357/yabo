@@ -209,7 +209,7 @@ export default {
       gameBtn: {url: ''},
       pokerBtn: {url: ''},
       pcBtn: {url: ''},
-      kefu: {url: 'https://temp-chat.mstatik.com/widget/standalone.html?eid=192575'}
+      kefu: {url: 'https://kefu.qiuxyz.com/im/text/150xmc.html'}
     }
   },
   created () {
