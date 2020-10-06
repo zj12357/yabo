@@ -209,7 +209,7 @@ export default {
       gameBtn: {url: ''},
       pokerBtn: {url: ''},
       pcBtn: {url: ''},
-      kefu: {url: 'https://kefu.qiuxyz.com/im/text/150xmc.html'}
+      kefu: {url: ''}
     }
   },
   created () {
@@ -239,6 +239,9 @@ export default {
               break
             case 'ToPoker':
               this.pokerBtn.url = res.data.data.List[i].downurl
+              break
+            case 'goChatbot':
+              this.kefu.url=res.data.data.List[i].downurl
               break
             default:
           }
