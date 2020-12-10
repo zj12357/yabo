@@ -1,24 +1,22 @@
 <template>
   <div class="proms router-view">
     <div id="navBar" style="background-color: rgba(0,0,0,0)">
-      <div class="tab-wrp" ref="tabBar" @mousedown="tabMouseDown($event)" @mousemove="tabMouseMove($event)" @mouseup="tabMouseUp($event)">
-        <div class="navItem" v-for="(tab,index) in list"  @click="tabClick(index)" :style="`${index!=0?'margin-left: 20px':''}`"  >
-          <span :class="`${nowIndex==index?'slide-nav-active':''}`" :style="`${nowIndex==index?'background: #d8cbbe !important;color:#000':'color:#fff'}`" >{{tab.title}}</span>
+      <div ref="tabBar" class="tab-wrp" @mousedown="tabMouseDown($event)" @mousemove="tabMouseMove($event)" @mouseup="tabMouseUp($event)">
+        <div v-for="(tab,index) in list" :style="`${index!=0?'margin-left: 20px':''}`" :key="tab.title" class="navItem" @click="tabClick(index)">
+          <span :class="`${nowIndex==index?'slide-nav-active':''}`" :style="`${nowIndex==index?'background: #d8cbbe !important;color:#000':'color:#fff'}`" >{{ tab.title }}</span>
         </div>
-        <div class="navItem" @click="toIndex" style="margin-left: 20px"  >
+        <div class="navItem" style="margin-left: 20px" @click="toIndex" >
           <span style="color: #fff">返回首页</span>
         </div>
       </div>
     </div>
-    <vue-element-loading :active="loading" spinner="bar-fade-scale" color="#B29881" :is-full-screen="true" background-color="transparent"/>
-    <div class="swiper-container" id="promosContent">
+    <vue-element-loading :active="loading" :is-full-screen="true" spinner="bar-fade-scale" color="#B29881" background-color="transparent"/>
+    <div id="promosContent" class="swiper-container">
       <div class="swiper-wrapper">
-        <div v-for="(tb,index) in list" class="promosContent swiper-slide" :key="index">
+        <div v-for="(tb,index) in list" :key="index" class="promosContent swiper-slide">
           <div class="first">
             <div class="gift">
-              <div class="tableBox" v-html="tb.content">
-
-              </div>
+              <div class="tableBox" v-html="tb.content"/>
               <div class="goIndex">
                 <span class="tap-effect bgColor-effect" @click="toIndex">返回首页</span>
               </div>
@@ -34,11 +32,11 @@
 import '../assets/css/proms.css'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
-import {getPromsData} from "../model/index";
+import { getPromsData } from '../model/index'
 
 export default {
   components: { Swiper },
-  data () {
+  data() {
     return {
       nowIndex: 0,
       mySwiper: null,
@@ -46,32 +44,32 @@ export default {
       startX: 0,
       startY: 0,
       moveDirection: 0,
-      list:[],
+      list: [],
       loading: true
     }
   },
-  mounted () {
+  mounted() {
     var that = this
     window.onresize = () => {
       that.initSwiper()
     }
   },
-  created () {
+  created() {
     this.initData()
   },
   methods: {
-    toIndex () {
+    toIndex() {
       console.log('toIndex')
-      this.$router.push({name: 'index'})
+      this.$router.push({ name: 'index' })
     },
-    initData () {
+    initData() {
       getPromsData('无需申请').then(res => {
         this.loading = false
         this.list = res.data.data.List
         this.initSwiper()
       })
     },
-    initSwiper () {
+    initSwiper() {
       var that = this
       console.log('initSwiper')
       that.mySwiper = new Swiper('.swiper-container', {
@@ -81,22 +79,22 @@ export default {
       that.mySwiper.init()
       console.log(that.mySwiper)
     },
-    tabClick (index) {
+    tabClick(index) {
       this.mySwiper.update()
       this.nowIndex = index
-      this.mySwiper.slideTo(index, 300, function (e) { console.log(e) })
+      this.mySwiper.slideTo(index, 300, function(e) { console.log(e) })
     },
-    tabMouseDown (e) {
+    tabMouseDown(e) {
       this.tabMouseState = 'down'
       this.startX = e.clientX
       this.startY = e.clientY
     },
-    tabMouseMove (e) {
+    tabMouseMove(e) {
       if (this.tabMouseState === 'down') {
-        this.$refs.tabBar.scrollBy(this.startX-e.clientX , 0)
+        this.$refs.tabBar.scrollBy(this.startX - e.clientX, 0)
       }
     },
-    tabMouseUp (e) {
+    tabMouseUp(e) {
       this.tabMouseState = 'up'
     }
   }

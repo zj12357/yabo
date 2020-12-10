@@ -8,7 +8,7 @@ const router = new Router({
     {
       path: '/',
       name: 'index',
-      meta: {keepAlive: true},
+      meta: { keepAlive: true },
       component: (resolve) => {
         require(['../views/index'], resolve)
       }
@@ -16,7 +16,7 @@ const router = new Router({
     {
       path: '/proms',
       name: 'proms',
-      meta: {keepAlive: true},
+      meta: { keepAlive: true },
       component: (resolve) => {
         require(['../views/proms'], resolve)
       }
@@ -24,7 +24,7 @@ const router = new Router({
     {
       path: '/gift',
       name: 'gift',
-      meta: {keepAlive: true},
+      meta: { keepAlive: true },
       component: (resolve) => {
         require(['../views/gift'], resolve)
       }
@@ -32,7 +32,7 @@ const router = new Router({
     {
       path: '/white',
       name: 'white',
-      meta: {keepAlive: true},
+      meta: { keepAlive: true },
       component: (resolve) => {
         require(['../views/white'], resolve)
       }
@@ -40,7 +40,7 @@ const router = new Router({
     {
       path: '/recommend',
       name: 'recommend',
-      meta: {keepAlive: true},
+      meta: { keepAlive: true },
       component: (resolve) => {
         require(['../views/recommend'], resolve)
       }

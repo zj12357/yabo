@@ -1,21 +1,21 @@
 <template>
-    <ul>
-      <li v-for="(item,i) in items" :key='i' class="w2" @click="toUrl(i)">
-        <svg class="icon" aria-hidden="true" v-if="$route.path==item.url">
-          <use :xlink:href="item.icon1"></use>
-        </svg>
-         <svg class="icon" aria-hidden="true" v-if="$route.path!==item.url">
-          <use :xlink:href="item.icon2"></use>
-        </svg>
-        <div class="name" :class="{'c1':$route.path==item.url}">{{item.name}}</div>
-      </li>
-      <div class="bt1"></div>
-    </ul>
+  <ul>
+    <li v-for="(item,i) in items" :key="i" class="w2" @click="toUrl(i)">
+      <svg v-if="$route.path==item.url" class="icon" aria-hidden="true">
+        <use :xlink:href="item.icon1"/>
+      </svg>
+      <svg v-if="$route.path!==item.url" class="icon" aria-hidden="true">
+        <use :xlink:href="item.icon2"/>
+      </svg>
+      <div :class="{'c1':$route.path==item.url}" class="name">{{ item.name }}</div>
+    </li>
+    <div class="bt1"/>
+  </ul>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       items: [
         {
@@ -34,7 +34,7 @@ export default {
     }
   },
   methods: {
-    toUrl (i) {
+    toUrl(i) {
       this.$router.replace({
         path: this.items[i].url
       })

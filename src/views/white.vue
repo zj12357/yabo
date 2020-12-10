@@ -1,13 +1,13 @@
 <template>
   <div class="gift">
-    <vue-element-loading :active="loading" spinner="bar-fade-scale" color="#B29881" :is-full-screen="true" background-color="transparent"/>
-    <div class="swiper-container" id="promosContent">
+    <vue-element-loading :active="loading" :is-full-screen="true" spinner="bar-fade-scale" color="#B29881" background-color="transparent"/>
+    <div id="promosContent" class="swiper-container">
       <div class="swiper-wrapper">
         <div class="promosContent swiper-slide">
           <div class="reg58">
             <ul>
               <li><span >手机号码 :</span>
-                <input maxlength="11"  v-model="tel" type="text" placeholder="需要加白的手机号" class="tel"></li>
+              <input v-model="tel" maxlength="11" type="text" placeholder="需要加白的手机号" class="tel"></li>
               <li>
                 <a>
                   <button class="mint-button button mint-button--default mint-button--normal" @click="WhiteFrom">
@@ -28,9 +28,9 @@
           </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>为了防止过度营销影响到您的正常工作或生活，特设立手机号白名单功能，如果您不需要收到此类短信，请提交您的手机号，提交后我们将不再推送此类短信。</td>
-        </tr>
+          <tr>
+            <td>为了防止过度营销影响到您的正常工作或生活，特设立手机号白名单功能，如果您不需要收到此类短信，请提交您的手机号，提交后我们将不再推送此类短信。</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -41,33 +41,33 @@
 </template>
 
 <script>
-  import '../assets/css/index.css'
-  import '../assets/css/proms.css'
-  import {WhiteFrom} from '../model/index.js'
+import '../assets/css/index.css'
+import '../assets/css/proms.css'
+import { WhiteFrom } from '../model/index.js'
 
-  export default {
-    data () {
-      return {
-        tel: '',
-        loading: false
-      }
+export default {
+  data() {
+    return {
+      tel: '',
+      loading: false
+    }
+  },
+  methods: {
+    toIndex() {
+      this.$router.push({ name: 'index' })
     },
-    methods: {
-      toIndex () {
-        this.$router.push({name: 'index'})
-      },
-      WhiteFrom () {
-        // 提交白名单
-        this.loading = true
-        WhiteFrom(this.tel).then(res => {
-          // eslint-disable-next-line eqeqeq
-          this.loading = false
-          this.tel = ''
-          alert(res.data.msg)
-        })
-      }
+    WhiteFrom() {
+      // 提交白名单
+      this.loading = true
+      WhiteFrom(this.tel).then(res => {
+        // eslint-disable-next-line eqeqeq
+        this.loading = false
+        this.tel = ''
+        alert(res.data.msg)
+      })
     }
   }
+}
 </script>
 
 <style scoped lang="less">

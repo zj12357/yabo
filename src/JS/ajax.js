@@ -1,8 +1,7 @@
 import axios from 'axios'
-import vm from '../main'
 // import Vue from 'vue'
 
-let http = axios.create({
+const http = axios.create({
   baseURL: 'http://api.page.activity.yaboabc.com'
 })
 // 请求拦截器
@@ -32,7 +31,7 @@ http.interceptors.response.use(
   }
 )
 
-function get (url, data) {
+function get(url, data) {
   return new Promise((resolve, reject) => {
     http.get(url)
       .then(
@@ -49,7 +48,7 @@ function get (url, data) {
   })
 }
 
-function post (url, data) {
+function post(url, data) {
   return new Promise((resolve, reject) => {
     http.post(url, data)
       .then(

@@ -1,37 +1,35 @@
 <template>
   <div>
-    <div class="btn" :class="{'footer':isBottom}" v-if="count==1">
-      <button class="button" :class="{'o8':loading,'round':round,'simple':simple}" @click="submit" :disabled="loading">
-        <span>{{txt}}</span>
+    <div v-if="count==1" :class="{'footer':isBottom}" class="btn">
+      <button :class="{'o8':loading,'round':round,'simple':simple}" :disabled="loading" class="button" @click="submit">
+        <span>{{ txt }}</span>
       </button>
     </div>
-    <div class="footerBtn2" v-if="count==2">
-      <button class="btnLeft" @click="onLeft">{{leftTxt}}</button>
-      <button class="btnRight" @click="onRight">{{rightTxt}}</button>
+    <div v-if="count==2" class="footerBtn2">
+      <button class="btnLeft" @click="onLeft">{{ leftTxt }}</button>
+      <button class="btnRight" @click="onRight">{{ rightTxt }}</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      // txt: '提交'
-    }
-  },
   props: {
     txt: {
-      type: String
+      type: String,
+      default: ''
     },
     count: {
       type: Number,
       default: 1
     },
     rightTxt: {
-      type: String
+      type: String,
+      default: ''
     },
     leftTxt: {
-      type: String
+      type: String,
+      default: ''
     },
     loading: {
       type: Boolean,
@@ -50,14 +48,19 @@ export default {
       default: false
     }
   },
+  data() {
+    return {
+      // txt: '提交'
+    }
+  },
   methods: {
-    submit () {
+    submit() {
       this.$emit('onSubmit', '')
     },
-    onLeft () {
+    onLeft() {
       this.$emit('onLeft', '')
     },
-    onRight () {
+    onRight() {
       this.$emit('onRight', '')
     }
   }

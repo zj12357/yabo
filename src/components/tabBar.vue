@@ -1,6 +1,6 @@
 <template>
   <div class="tabBar clearfix">
-    <div class="item" :class="{'active':activeIndex==index}" v-for="(item,index) in list" :key="index" @click="toUrl(item)">{{item.name}}</div>
+    <div v-for="(item,index) in list" :class="{'active':activeIndex==index}" :key="index" class="item" @click="toUrl(item)">{{ item.name }}</div>
   </div>
 </template>
 
@@ -8,14 +8,16 @@
 export default {
   props: {
     activeIndex: {
-      type: Number
+      type: Number,
+      default: 0
     },
     list: {
-      type: Array
+      type: Array,
+      default: () => []
     }
   },
   methods: {
-    toUrl (item) {
+    toUrl(item) {
       this.$router.replace({
         path: item.url
       })

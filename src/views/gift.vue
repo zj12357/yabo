@@ -1,21 +1,21 @@
 <template>
   <div class="gift">
-    <vue-element-loading :active="loading" spinner="bar-fade-scale" color="#B29881" :is-full-screen="true" background-color="transparent"/>
-    <div class="swiper-container" id="promosContent" v-if="IsShow">
+    <vue-element-loading :active="loading" :is-full-screen="true" spinner="bar-fade-scale" color="#B29881" background-color="transparent"/>
+    <div v-if="IsShow" id="promosContent" class="swiper-container">
       <div class="swiper-wrapper">
         <div class="promosContent swiper-slide">
           <div class="reg58">
             <ul>
               <li>
-                <a :href="this.wapUrl" target="_blank">
+                <a :href="wapUrl" target="_blank">
                   <mt-button type="default" class="button">新用户点击注册(记得返回申请)</mt-button>
                 </a>
               </li>
               <li>
                 <span >游戏账号 :</span>
-                <input maxlength="30" v-model="account" type="text" placeholder="新注册的游戏账号" class="account"></li>
+              <input v-model="account" maxlength="30" type="text" placeholder="新注册的游戏账号" class="account"></li>
               <li><span >联系电话 :</span>
-                <input maxlength="11"  v-model="tel" type="text" placeholder="收到短信的手机号" class="tel"></li>
+              <input v-model="tel" maxlength="11" type="text" placeholder="收到短信的手机号" class="tel"></li>
               <li>
                 <a>
                   <button class="mint-button button mint-button--default mint-button--normal" @click="PostFrom">
@@ -28,9 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="tableBox" v-html="content" style="margin-top: 20px">
-
-    </div>
+    <div class="tableBox" style="margin-top: 20px" v-html="content"/>
     <div class="goIndex">
       <span class="tap-effect bgColor-effect" @click="toIndex">返回首页</span>
     </div>
@@ -40,10 +38,10 @@
 <script>
 import '../assets/css/index.css'
 import '../assets/css/proms.css'
-import {getIndexData, PostFrom} from '../model/index.js'
+import { getIndexData, PostFrom } from '../model/index.js'
 
 export default {
-  data () {
+  data() {
     return {
       content: '',
       activity: 1,
@@ -54,11 +52,11 @@ export default {
       loading: true
     }
   },
-  created () {
+  created() {
     this.init()
   },
   methods: {
-    init () {
+    init() {
       getIndexData().then(res => {
         this.loading = false
         for (var i = 0; i < res.data.data.List.length; i++) {
@@ -78,13 +76,13 @@ export default {
         }
       })
     },
-    toIndex () {
-      this.$router.push({name: 'index'})
+    toIndex() {
+      this.$router.push({ name: 'index' })
     },
-    PostFrom () {
+    PostFrom() {
       // 提交申请
       this.loading = true
-      PostFrom({tel: this.tel, account: this.account, aType: this.activity, AImg: ''}).then(res => {
+      PostFrom({ tel: this.tel, account: this.account, aType: this.activity, AImg: '' }).then(res => {
         // eslint-disable-next-line eqeqeq
         this.loading = false
         this.tel = ''

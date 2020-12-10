@@ -1,29 +1,29 @@
 <template>
   <div class="recommend">
-    <div class="tableBox" v-html="table"></div>
+    <div class="tableBox" v-html="table"/>
     <div class="goIndex tap-effect bgColor-effect">
-      <span class="tap-effect bgColor-effect" @click="toIndex">返回首页</span></div>
+    <span class="tap-effect bgColor-effect" @click="toIndex">返回首页</span></div>
   </div>
 </template>
 
 <script>
 import '../assets/css/index.css'
-import {getRemTable} from "../model";
+import { getRemTable } from '../model'
 
 export default {
-  data () {
+  data() {
     return {
-      table:''
+      table: ''
     }
   },
-  created () {
+  created() {
     this.init()
   },
   methods: {
-    toIndex () {
-      this.$router.push({name: 'index'})
+    toIndex() {
+      this.$router.push({ name: 'index' })
     },
-    init () {
+    init() {
       getRemTable().then(res => {
         this.table = res.data.table
       })

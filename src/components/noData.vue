@@ -1,6 +1,6 @@
 <template>
   <div class="noData">
-    <div class="txt">{{txt}}</div>
+    <div class="txt">{{ txt }}</div>
   </div>
 </template>
 
@@ -8,7 +8,8 @@
 export default {
   props: {
     txt: {
-      type: String
+      type: String,
+      default: ''
     }
   }
 }

@@ -6,12 +6,12 @@
       <div class="intr">
         <img src="../src/assets/img/line.png">
         <div>亚博香港上市，股票代码:08279</div>
-        <img src="../src/assets/img/line.png" class="deg180"></div>
+      <img src="../src/assets/img/line.png" class="deg180"></div>
     </header>
     <transition name="router-transition">
-      <router-view v-if="!$route.meta.keepAlive" class="router-view"></router-view>
+      <router-view v-if="!$route.meta.keepAlive" class="router-view"/>
       <keep-alive>
-        <router-view v-if="$route.meta.keepAlive" class="router-view"></router-view>
+        <router-view v-if="$route.meta.keepAlive" class="router-view"/>
       </keep-alive>
     </transition>
     <footer>
@@ -32,13 +32,13 @@
 <script>
 export default {
   name: 'App',
-  data () {
+  data() {
     return {
       transitionName: ''
     }
   },
   watch: {
-    '$route' (to, from) {
+    '$route'(to, from) {
       this.transitionName = 'slide-right'
     }
   }

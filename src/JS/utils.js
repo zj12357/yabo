@@ -1,8 +1,8 @@
 export default {
-  install (Vue, options) {
+  install(Vue, options) {
     Vue.prototype.util = {
       // url序列参数转化为对象
-      queryParse (url) {
+      queryParse(url) {
         if (url.indexOf('?') === -1) {
           return null
         }
@@ -17,7 +17,7 @@ export default {
         return result
       },
       // 判断设备处于PC还是移动端
-      mobileTest () {
+      mobileTest() {
         if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
           return true
         } else {
@@ -25,10 +25,10 @@ export default {
         }
       },
       // 判断安卓或者ios终端
-      ckos () {
-        let u = navigator.userAgent
-        let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1 // android终端
-        let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) // ios终端
+      ckos() {
+        const u = navigator.userAgent
+        const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1 // android终端
+        const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) // ios终端
         if (isAndroid) {
           return 'android'
         } else if (isiOS) {
@@ -38,7 +38,7 @@ export default {
         }
       },
       // 日期格式化
-      dateFormat (date, fmt) {
+      dateFormat(date, fmt) {
         var o = {
           'M+': date.getMonth() + 1,
           'd+': date.getDate(),
